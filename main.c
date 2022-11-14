@@ -12,7 +12,11 @@ typedef struct enem{
 }enemigo;
 
 typedef struct personaje{
-
+    char *nombre;
+    int vida;
+    int fuerza;
+    int dureza;
+    int inteligencia;
 }personaje;
 
 typedef struct carta{
@@ -20,8 +24,9 @@ typedef struct carta{
 }carta;
 
 enemigo leerEnemigos(FILE *file);
+personaje leerPersonajes(FILE *file);
 
-enemigo leerTexto(FILE *file);
+//enemigo leerTexto(FILE *file);
 int main(){
     FILE *file;
 
@@ -32,14 +37,15 @@ int main(){
     }
 
     leerEnemigos(file);
-    //file = fopen("prueba.txt", "r");
-    //leerTexto(file);
+    file = fopen("personajes.txt", "r");
+    leerPersonajes(file);
     return 0;
 }
 
 //enemigo arrEnemigos[30] = {};
 
 // Lectura de archivos
+// Lectura de enemigos
 enemigo leerEnemigos(FILE *file){
     enemigo arrEnemigos[30] = {};
     char linea[1000];
@@ -63,7 +69,7 @@ enemigo leerEnemigos(FILE *file){
 
         sp = strtok(NULL, ",");
         strcpy(tipo, sp);
-
+        
         auxiliar.nombre = nombre;
         auxiliar.descripcion = descripcion;
         auxiliar.vida = vida;
@@ -71,7 +77,50 @@ enemigo leerEnemigos(FILE *file){
 
         arrEnemigos[i] = auxiliar;
         
-        //printf("\n%s %s %d %s", arrEnemigos[i].nombre, arrEnemigos[i].descripcion, arrEnemigos[i].vida, arrEnemigos[i].tipo);
+        printf("\n%s %s %d %s", arrEnemigos[i].nombre, arrEnemigos[i].descripcion, arrEnemigos[i].vida, arrEnemigos[i].tipo);
+        i++;
+    }
+    fclose(file);
+}
+
+// Lectura de enemigos
+personaje leerPersonajes(FILE *file){
+    personaje arrPersonajes[3] = {};
+    char linea[1000];
+    char nombre[10];
+    int vida;
+    int fuerza;
+    int dureza;
+    int inteligencia;
+    char *sp;
+    int i = 0;
+    personaje auxiliar;
+
+    while(fgets(linea, 1000, file) != NULL){
+        sp = strtok(linea, ",");
+        strcpy(nombre, sp);
+
+        sp = strtok(NULL, ",");
+        vida = atoi(sp);
+
+        sp = strtok(NULL, ",");
+        fuerza = atoi(sp);
+
+        sp = strtok(NULL, ",");
+        dureza = atoi(sp);
+
+        sp = strtok(NULL, ",");
+        inteligencia = atoi(sp);
+
+        auxiliar.nombre = nombre;
+        auxiliar.vida = vida;
+        auxiliar.fuerza = fuerza;
+        auxiliar.dureza = dureza;
+        auxiliar.inteligencia = inteligencia;
+
+        arrPersonajes[i] = auxiliar;
+        
+        printf("\n%s %d %d %d %d", arrPersonajes[i].nombre, arrPersonajes[i].vida, arrPersonajes[i].fuerza, arrPersonajes[i].dureza, arrPersonajes[i].inteligencia);
         i++;
     }
     fclose(file);
