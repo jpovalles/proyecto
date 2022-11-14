@@ -1,2 +1,30 @@
-Arpia,Bestia voladora que utiliza proyectiles venenosos,45,normal
-Trol,Seguidores de demonios de altos rangos,600,normal
+Arpia,Bestia voladora que utiliza proyectiles venenosos, 500,normal
+Bruja,Hechicera exiliada por utilizar magia prohibida, 450,normal
+Bufon,Bromista mecanizado capaz de utilizar diversos trucos y trampas para capturar a los desprevenidos,400,normal
+Gnomo,Ser enano que domina la teletransportacion para robar a cualquiera que se le cruce,550,normal
+Noble,Subordinado de Fabio que domina el arte de la espada,700,normal
+Anima,Espectro que se alimenta de las almas de los vivos,800,normal
+Titan,Humanoide de gran altura y fuerza descomunal,950,normal
+Maton,Ladron con ataques rapidos de dagas dobles,1000,elite
+Momia,Antiguo rey que conquisto reinos con su control perfecto de la arena,2200,jefe
+Fabio,Valiente arriero paisa que infunde terror con su machete y carriel tiene una rivalidad con requiem,3000,jefe
+Orco, Monstruo que se alimenta de humanos,2300,jefe
+Trol,Demonios que se especializan en lanzar maldiciones y generar el caos en grupos,1500,elite
+Incendiario,Bestia creada a partir del fuego mismo pulveriza casi cualquier cosa que se le acerque,900,normal
+Geryon,Parasito de la naturaleza deja infertil cualquier tierra a la que se acerque,800,normal
+Diablillo,Demonio de menor rango que utiliza sus travesuras para sobrevivir en combates,780,normal
+Treant,Arboles que cobraron vida gracias al poder del Druida actuan como guardias de la naturaleza,330,normal
+Leviathan,Demonio marino de exorbitantes dimensiones es el mayor temor de los piratas,600,normal
+Cavaliere,Antiguo caballero mitico inmortalizado por magos que se puede regenerar a velocidades altas,2740,jefe
+Behemoth,Demonio de los altos rangos. Comanda a los Geryon para devastar la naturaleza,2500,jefe
+Amon,Demonio de alto rango que tiene partes de diferentes animales aterrorizando a cualquiera de poca voluntad,2800,jefe
+Fhamiud,Demonio que puede adquirir cualquier forma que desee y se alimenta de la sangre de los vivos,2100,jefe
+Grifo,Criatura que de cuerpo de leon y cabeza de aguila que aleja a los invasores de las ruinas,
+Gresuk,Bestia cazadora que se divierte al perseguir a seres aterrorizados que cruzaron su territorio,1000,elite
+Vassago,Alma que ataca a cualquier ser vivo para apoderarse de su cuerpo,1220,elite
+Pirata,Un tipo de maton que logro lucrarse mejor en mar. Tiene mejor equipamiento que un maton regular,300,normal
+Marioneta,Antiguo sirviente artificial de los reyes. Se volvio obsoleto al generar consciencia propia,1700,elite
+Cerza,Estructura romboidal que actua como guardia en algunas entradas de las ruinas,300,normal
+Druida,Jefe de los treants y verdadero guardian de la naturaleza,1300,elite
+Scargar,Demonio que vive entre humanos y tiene un gran poder político,460,normal 
+Requiem,Criatura del vacio, la mas fuerte de todas. Temido por los demonios y controlado por Fabio,3000,jefe

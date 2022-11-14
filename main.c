@@ -19,45 +19,45 @@ typedef struct personaje{
     int inteligencia;
 }personaje;
 
-typedef struct carta{
+// typedef struct carta{
 
-}carta;
+// }carta;
 
-enemigo leerEnemigos(FILE *file);
-personaje leerPersonajes(FILE *file);
+void leerEnemigos();
+void leerPersonajes();
 
-//enemigo leerTexto(FILE *file);
+enemigo arrEnemigos[30] = {};
+personaje arrPersonajes[3] = {};
+
 int main(){
+    leerEnemigos();
+    leerPersonajes();
+
+    int i = 0;
+    printf("\nX %s %s %d %s", arrEnemigos[i].nombre, arrEnemigos[i].descripcion, arrEnemigos[i].vida, arrEnemigos[i].tipo);
+    printf("\nP %s %d %d %d %d", arrPersonajes[i].nombre, arrPersonajes[i].vida, arrPersonajes[i].fuerza, arrPersonajes[i].dureza, arrPersonajes[i].inteligencia);
+    return 0;
+}
+
+// Lectura de archivos
+// Lectura de enemigos
+void leerEnemigos(){
     FILE *file;
-
     file = fopen("enemigos.txt", "r");
-
     if(file == NULL){
         printf("No se pudo leer el archivo!\n");
     }
 
-    leerEnemigos(file);
-    file = fopen("personajes.txt", "r");
-    leerPersonajes(file);
-    return 0;
-}
-
-//enemigo arrEnemigos[30] = {};
-
-// Lectura de archivos
-// Lectura de enemigos
-enemigo leerEnemigos(FILE *file){
-    enemigo arrEnemigos[30] = {};
-    char linea[1000];
-    char nombre[10];
-    char descripcion[100]; 
+    char linea[1500];
+    char nombre[20];
+    char descripcion[150]; 
     int vida;
-    char tipo[10];
+    char tipo[20];
     char *sp;
     int i = 0;
     enemigo auxiliar;
 
-    while(fgets(linea, 1000, file) != NULL){
+    while(fgets(linea, 1500, file) != NULL){
         sp = strtok(linea, ",");
         strcpy(nombre, sp);
 
@@ -71,21 +71,29 @@ enemigo leerEnemigos(FILE *file){
         strcpy(tipo, sp);
         
         auxiliar.nombre = nombre;
-        auxiliar.descripcion = descripcion;
         auxiliar.vida = vida;
+        auxiliar.descripcion = descripcion;
         auxiliar.tipo = tipo;
 
         arrEnemigos[i] = auxiliar;
         
-        printf("\n%s %s %d %s", arrEnemigos[i].nombre, arrEnemigos[i].descripcion, arrEnemigos[i].vida, arrEnemigos[i].tipo);
+        printf("\nP %s %s %d %s", arrEnemigos[i].nombre, arrEnemigos[i].descripcion, arrEnemigos[i].vida, arrEnemigos[i].tipo);
         i++;
+        if(fgets(linea, 1000, file) != NULL){
+            printf("\nNULL\n\n");
+        }
     }
     fclose(file);
 }
 
-// Lectura de enemigos
-personaje leerPersonajes(FILE *file){
-    personaje arrPersonajes[3] = {};
+// Lectura de personajes
+void leerPersonajes(){
+    FILE *file;
+    file = fopen("personajes.txt", "r");
+    if(file == NULL){
+        printf("No se pudo leer el archivo!\n");
+    }
+
     char linea[1000];
     char nombre[10];
     int vida;
@@ -120,7 +128,7 @@ personaje leerPersonajes(FILE *file){
 
         arrPersonajes[i] = auxiliar;
         
-        printf("\n%s %d %d %d %d", arrPersonajes[i].nombre, arrPersonajes[i].vida, arrPersonajes[i].fuerza, arrPersonajes[i].dureza, arrPersonajes[i].inteligencia);
+        printf("\nP %s %d %d %d %d", arrPersonajes[i].nombre, arrPersonajes[i].vida, arrPersonajes[i].fuerza, arrPersonajes[i].dureza, arrPersonajes[i].inteligencia);
         i++;
     }
     fclose(file);

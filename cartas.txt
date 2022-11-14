@@ -1,0 +1,15 @@
+Golpe karate,Ataque,El enemigo es atacado con un corte agudo,2
+Destructor,Ataque,El enemigo es atacado fisicamente con una patada,3
+Patadas Cometa,Ataque,El enemigo es atacado con una rafaga de patadas,1
+Asalto salvaje,Ataque,El enemigo es abordado por un frenesi psicotico de golpes,2
+Anticipo,Defensa,Esquiva con velocidad lo ataques enemigos,1
+Anillo igneo,Defensa,Invoca un cerco igneo para evitar ataques,2
+Armadura acida,Defensa,Coraza toxica que repele los ataques enemigos,3
+Retribucion,Habilidad,Intercambia los puntos de vida con el enemigo,1
+Fabio el valiente,Habilidad,Invoca a Fabio para que con su valentia ataque al enemigo,2
+Chupavidas,Habilidad,Ataca al enemigo y el daño inflingido se suma a tus puntos de vida,3
+Aplastamiento continental,Ataque,Crea una montaña rocosa con la que aplasta al objetivo,2
+Fango venenoso,Ataque,Ataca arrojando un monton de barro venenoso al oponente,2
+Camuflaje,Defensa,El usuario mimetiza dependiendo del entorno para evitar un ataque,3
+Buceo,Defensa,El usuario se sumerge bajo el agua para potenciar su defensa,2
+Meditacion,Habilidad,El usuario medita para recuperar puntos de vida,1
