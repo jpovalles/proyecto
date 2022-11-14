@@ -19,9 +19,9 @@ typedef struct carta{
 
 }carta;
 
+enemigo leerEnemigos(FILE *file);
 
-
-void leerTexto();
+enemigo leerTexto(FILE *file);
 int main(){
     FILE *file;
 
@@ -31,22 +31,25 @@ int main(){
         printf("No se pudo leer el archivo!\n");
     }
 
-    leerTexto(file);
-    file = fopen("prueba.txt", "r");
-    leerTexto(file);
+    leerEnemigos(file);
+    //file = fopen("prueba.txt", "r");
+    //leerTexto(file);
     return 0;
 }
 
-enemigo arrEnemigos[30] = {};
+//enemigo arrEnemigos[30] = {};
 
-void leerTexto(FILE *file){
-
+// Lectura de archivos
+enemigo leerEnemigos(FILE *file){
+    enemigo arrEnemigos[30] = {};
     char linea[1000];
     char nombre[10];
     char descripcion[100]; 
     int vida;
     char tipo[10];
     char *sp;
+    int i = 0;
+    enemigo auxiliar;
 
     while(fgets(linea, 1000, file) != NULL){
         sp = strtok(linea, ",");
@@ -61,8 +64,15 @@ void leerTexto(FILE *file){
         sp = strtok(NULL, ",");
         strcpy(tipo, sp);
 
-        printf("\n%s %s %d %s", nombre, descripcion, vida, tipo);
-    }
+        auxiliar.nombre = nombre;
+        auxiliar.descripcion = descripcion;
+        auxiliar.vida = vida;
+        auxiliar.tipo = tipo;
 
+        arrEnemigos[i] = auxiliar;
+        
+        //printf("\n%s %s %d %s", arrEnemigos[i].nombre, arrEnemigos[i].descripcion, arrEnemigos[i].vida, arrEnemigos[i].tipo);
+        i++;
+    }
     fclose(file);
 }
