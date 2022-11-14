@@ -1,0 +1,2 @@
+Arpia,Bestia voladora que utiliza proyectiles venenosos,45,normal
+Trol,Seguidores de demonios de altos rangos,600,normal
